@@ -1,11 +1,11 @@
 tasks:
   Default:
     command:
-    - python
-    - task.py
+      - python
+      - task.py
 
 condaConfigFile: conda.yaml
-artifacsDir: output
+artifactsDir: output
 PATH:
   - .
 PYTHONPATH:
