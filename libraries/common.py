@@ -2,7 +2,7 @@ import shutil, time, os, sys
 
 from robot.api import logger
 from datetime import datetime, timedelta
-from RPA.Robocorp import Vault
+from RPA.Robocorp.Vault import Vault
 from RPA.Browser.Selenium import Selenium
 from ta_bitwarden_cli.ta_bitwarden_cli import Bitwarden
 
