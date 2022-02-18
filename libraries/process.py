@@ -19,15 +19,33 @@ class Process:
         browser.maximize_browser_window()
         mundialitis = Mundialitis(browser, credentials["Mundialitis"])
         mundialitis.login()
-
+        self.mundialitis = mundialitis
 
 
     def start(self):
-        log_message("Macro Step 1")
-        log_message("Macro Step 2")
-        log_message("Macro Step 3")
+        log_message("Start - Create Lobby")
+        self.mundialitis.create_lobby()
+        log_message("End - Create Lobby")
+        log_message("Start - Register New User")
+        self.mundialitis.register_new_user()
+        log_message("Finish - Register New User")
+        log_message("Start - Join Lobby")
+        self.mundialitis.join_lobby("user")
+        log_message("Finish - Join Lobby")
+        log_message("Start - Login with First User")
+        self.mundialitis.login()
+        log_message("Finish - Login with First User")
+        log_message("Start - Join Lobby with First User")
+        self.mundialitis.join_lobby("creator")
+        log_message("Finish - Join Lobby with First User")
+        log_message("Start - Start Game")
+        self.mundialitis.start_game()
+        log_message("Finish - Start Game")
+        log_message("Start - Play Game")
+        self.mundialitis.play_game()
+        log_message("Finish - Play Game")
+
 
     def finish(self):
-        capture_page_screenshot(OUTPUT_FOLDER, "Mundialitis_Login")
         log_message("DW Process Finished")
         browser.close_browser()
